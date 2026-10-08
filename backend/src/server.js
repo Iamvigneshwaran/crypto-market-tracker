@@ -17,4 +17,5 @@ app.use((err, req, res, next) => {
   res.status(status).json({ error: status === 404 ? 'Not found' : 'Something went wrong' });
 });
 
-app.listen(port, () => console.log(`API running on http://localhost:${port}`));
+// app.listen(port, () => console.log(`API running on http://localhost:${port}`));
+app.listen(port, '0.0.0.0', () => console.log(`API running on port ${port}`));

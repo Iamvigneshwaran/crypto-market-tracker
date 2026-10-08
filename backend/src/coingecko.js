@@ -8,7 +8,8 @@ async function cg(path, params = {}) {
   const timer = setTimeout(() => ctrl.abort(), timeoutMs);
   try {
     const res = await fetch(url, {
-      headers: { accept: 'application/json', 'x-cg-demo-api-key': apiKey },
+      // headers: { accept: 'application/json', 'x-cg-demo-api-key': apiKey },
+      headers: { accept: 'application/json', ...(apiKey && { 'x-cg-demo-api-key': apiKey }) },
       signal: ctrl.signal,
     });
     if (!res.ok) {
