@@ -5,7 +5,6 @@ import 'package:google_fonts/google_fonts.dart';
 
 import 'app_colors.dart';
 
-/// Prices/numbers align aaga: Theme.of(context).textTheme.titleMedium!.tabular
 extension NumericStyle on TextStyle {
   TextStyle get tabular =>
       copyWith(fontFeatures: const [FontFeature.tabularFigures()]);

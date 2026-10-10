@@ -14,7 +14,6 @@ class StatsViewModel extends AsyncNotifier<StatsResponse> {
     return ref.read(statsRepositoryProvider).getStats();
   }
 
-  /// Pull-to-refresh / auto refresh. Fail aanaa pazhaya data apdiye irukkum.
   Future<void> refresh() async {
     try {
       final res = await ref.read(statsRepositoryProvider).getStats();
@@ -24,7 +23,6 @@ class StatsViewModel extends AsyncNotifier<StatsResponse> {
     }
   }
 
-  /// Error screen la Retry: skeleton kaattitu thirumba load pannum.
   Future<void> reload() async {
     state = const AsyncLoading();
     try {

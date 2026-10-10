@@ -4,7 +4,6 @@ import '../../../../core/utils/json_converters.dart';
 
 part 'mini_coin.g.dart';
 
-/// Top gainers / losers ku
 @JsonSerializable(createToJson: false)
 class MiniCoin {
   const MiniCoin({
