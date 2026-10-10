@@ -12,7 +12,7 @@ class CoinTile extends StatelessWidget {
   const CoinTile({super.key, required this.coin, this.leading, this.onTap});
 
   final Coin coin;
-  final Widget? leading; // star button
+  final Widget? leading;
   final VoidCallback? onTap;
 
   @override

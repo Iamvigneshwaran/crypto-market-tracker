@@ -75,7 +75,6 @@ class EmptyView extends StatelessWidget {
   }
 }
 
-/// source = fallback / stale na mattum kaattum
 class OfflineBanner extends StatelessWidget {
   const OfflineBanner({super.key, required this.source});
   final String source;

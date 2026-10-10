@@ -1,8 +1,14 @@
+import 'package:flutter_dotenv/flutter_dotenv.dart';
+
 class AppConfig {
-  // Android emulator: 10.0.2.2 | real phone: laptop IP
-  // Override: flutter run --dart-define=API_BASE_URL=http://192.168.1.5:3000/api
-  static const baseUrl = String.fromEnvironment(
-    'API_BASE_URL',
-    defaultValue: 'http://10.0.2.2:3000/api',
-  );
+  static const envName = String.fromEnvironment('ENV', defaultValue: 'dev');
+  static const envFile = '.env.$envName';
+
+  static String get baseUrl {
+    final value = dotenv.env['API_BASE_URL'];
+    if (value == null || value.isEmpty) {
+      throw StateError('API_BASE_URL missing in $envFile');
+    }
+    return value;
+  }
 }

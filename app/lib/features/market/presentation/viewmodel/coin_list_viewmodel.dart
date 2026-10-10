@@ -17,7 +17,6 @@ class CoinListViewModel extends Notifier<CoinListState> {
       _debounce?.cancel();
       _autoRefresh?.cancel();
     });
-    // Backend cache TTL 60s, so 60s ku oru dhadava silent refresh
     _autoRefresh = Timer.periodic(const Duration(seconds: 60), (_) {
       if (state.page == 1 && state.status == ListStatus.data) {
         _fetch(page: 1, replace: true, silent: true);
@@ -27,13 +26,11 @@ class CoinListViewModel extends Notifier<CoinListState> {
     return const CoinListState();
   }
 
-  // ---------- actions ----------
   Future<void> load() async {
     state = state.copyWith(status: ListStatus.loading, clearError: true);
     await _fetch(page: 1, replace: true);
   }
 
-  /// Pull-to-refresh
   Future<void> refresh() => _fetch(page: 1, replace: true, silent: true);
 
   Future<void> loadMore() async {
@@ -72,7 +69,6 @@ class CoinListViewModel extends Notifier<CoinListState> {
     load();
   }
 
-  // ---------- internals ----------
   bool _sameRequest(CoinListState s) =>
       state.query == s.query &&
       state.sort == s.sort &&
@@ -94,7 +90,7 @@ class CoinListViewModel extends Notifier<CoinListState> {
             page: page,
             perPage: _perPage,
           );
-      if (!_sameRequest(s)) return; // user vera search/sort pannittaaru
+      if (!_sameRequest(s)) return;
       final coins = replace ? res.data : [...state.coins, ...res.data];
       state = state.copyWith(
         coins: coins,
@@ -108,10 +104,10 @@ class CoinListViewModel extends Notifier<CoinListState> {
     } catch (e) {
       if (!_sameRequest(s)) return;
       if (!replace) {
-        state = state.copyWith(isLoadingMore: false); // next page fail: ignore
+        state = state.copyWith(isLoadingMore: false);
         return;
       }
-      if (silent && state.coins.isNotEmpty) return; // background fail: old data irukkatum
+      if (silent && state.coins.isNotEmpty) return;
       state = state.copyWith(
         status: ListStatus.error,
         error: e is ApiException ? e.message : 'Something went wrong.',

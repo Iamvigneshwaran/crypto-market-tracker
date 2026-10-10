@@ -14,7 +14,7 @@ class CoinListResponse {
     required this.data,
   });
 
-  final String source; // live | cache | stale | fallback
+  final String source;
   final int page;
   final int perPage;
   final int total;
