@@ -59,6 +59,7 @@ dev_dependencies:
   flutter_lints: ^6.0.0
   build_runner: ^2.15.1
   json_serializable: ^6.14.1
+  flutter_native_splash: ^2.4.8
 
 # For information on the generic Dart part of this file, see the
 # following page: https://dart.dev/tools/pub/pubspec
@@ -75,6 +76,13 @@ flutter:
   assets:
       - .env.dev
       - .env.prod
+
+flutter_native_splash:
+  color: "#0F1217"
+  image: assets/splash/splash_logo.png
+  android_12:
+    color: "#0F1217"
+    image: assets/splash/splash_logo.png
 
   # An image asset can refer to one or more resolution-specific "variants", see
   # https://flutter.dev/to/resolution-aware-images
