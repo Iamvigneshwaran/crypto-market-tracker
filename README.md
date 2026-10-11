@@ -4,6 +4,51 @@ A mini CoinGecko-style crypto research mobile app built with **Flutter** (Riverp
 
 **Live backend:** https://crypto-market-tracker-tara.onrender.com/api/health
 
+## Screenshots
+
+| Market | Search / Filter | Coin Detail |
+|:--:|:--:|:--:|
+| <img src="docs/market_coin_list_screen.png" width="220" alt="Market"> | <img src="docs/filter_applied_ui.png" width="220" alt="Filter applied"> | <img src="docs/coin_details_screen_1.png" width="220" alt="Coin detail"> |
+
+| Watchlist (dark) | Market Stats | Error + Retry |
+|:--:|:--:|:--:|
+| <img src="docs/watchlist_dark.png" width="220" alt="Watchlist"> | <img src="docs/market_stats_screen.png" width="220" alt="Market stats"> | <img src="docs/error_retry_ui.png" width="220" alt="Error state"> |
+
+| Dark theme | Splash | Loading skeleton |
+|:--:|:--:|:--:|
+| <img src="docs/market_coinlist_dark_screen.png" width="220" alt="Dark theme"> | <img src="docs/splash_screen.png" width="220" alt="Splash"> | <img src="docs/loading_ui_coin_list.png" width="220" alt="Loading"> |
+
+<details>
+<summary>More screenshots</summary>
+
+### Market and filters
+
+| Pagination | Filter applied | Filters (dark) |
+|:--:|:--:|:--:|
+| <img src="docs/market_coin_list_screen_pagination.png" width="220"> | <img src="docs/fillter_applied.png" width="220"> | <img src="docs/coin_details_with_filters_dark.png" width="220"> |
+
+### Coin detail
+
+| Detail 2 | Detail 3 | Detail 4 |
+|:--:|:--:|:--:|
+| <img src="docs/coin_details_screen_2.png" width="220"> | <img src="docs/coin_details_screen_3.png" width="220"> | <img src="docs/coin_details_screen_4.png" width="220"> |
+
+| Detail (dark) | Detail (dark) |
+|:--:|:--:|
+| <img src="docs/coin_detils_dark.png" width="220"> | <img src="docs/coin_details_dark_2.png" width="220"> |
+
+### Stats and watchlist
+
+| Stats (dark) | Stats (dark) | Watchlist loading |
+|:--:|:--:|:--:|
+| <img src="docs/stats_dark_.png" width="220"> | <img src="docs/stats_dark_2.png" width="220"> | <img src="docs/watchlist_loading_screen.png" width="220"> |
+
+### Offline (fallback) banner
+
+<img src="docs/offline_banner.png" width="220">
+
+</details>
+
 ## Features
 
 - **Market (coin list):** price, 24h change, market cap, 7-day sparkline, rank
